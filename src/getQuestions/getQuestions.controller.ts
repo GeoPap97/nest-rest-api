@@ -1,4 +1,4 @@
-import { Controller, Get } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 import { GetQuestionsService } from "./getQuestions.service";
 
 @Controller('game')
@@ -9,12 +9,12 @@ export class GetQuestionsController{
     getQuestions(){
         return this.getQuestionsService.getQuestions();
     }
-    // @Post('getHint')
-    // gethint(){
-    //     return this.getQuestionsService.getQuestions();
-    // }
-    // @Post('getAnswer')
-    // getAnswer(){
-    //     return this.getQuestionsService.getQuestions();
-    // }
+    @Post('getHint')
+    gethint(@Body() hint){
+        return this.getQuestionsService.getHint(hint);
+    }
+    @Post('getAnswer')
+    getAnswer(@Body() ans){
+        return this.getQuestionsService.getAnswer(ans);
+    }
 }
