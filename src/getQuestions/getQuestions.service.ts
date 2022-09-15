@@ -175,7 +175,8 @@ export class GetQuestionsService {
                 an: 'd',
             }
         ]
-        if (hisAnswer.Ans == answer[hisAnswer.index])
+        console.log(hisAnswer.answer,answer[hisAnswer.index].an)
+        if (hisAnswer.answer == answer[hisAnswer.index].an)
          {
             return true;
          }

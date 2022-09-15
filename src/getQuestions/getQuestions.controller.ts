@@ -10,13 +10,13 @@ export class GetQuestionsController{
         return this.getQuestionsService.getQuestions();
     }
     @Post('getHint')
-    gethint(@Body() hint){
+    getHint(@Body() hint){
         console.log(hint);
-        
         return this.getQuestionsService.getHint(hint);
     }
     @Post('getAnswer')
     getAnswer(@Body() ans){
+        //console.log(ans);
         return this.getQuestionsService.getAnswer(ans);
     }
 }
