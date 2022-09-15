@@ -11,6 +11,8 @@ export class GetQuestionsController{
     }
     @Post('getHint')
     gethint(@Body() hint){
+        console.log(hint);
+        
         return this.getQuestionsService.getHint(hint);
     }
     @Post('getAnswer')

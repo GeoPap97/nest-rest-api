@@ -94,7 +94,7 @@ export class GetQuestionsService {
         return questions;
     }
 
-    getHint(index){
+    getHint(data){
         let hint = [
             {
                 Hint: 'It is commonly called this by Government Officials.'
@@ -134,9 +134,9 @@ export class GetQuestionsService {
             }
         ]
         
-        return hint[index.hint];
+        return hint[data.hint];
     }
-    getAnswer(index){
+    getAnswer(hisAnswer){
         let answer = [
             {
                 an:'c',
@@ -175,6 +175,12 @@ export class GetQuestionsService {
                 an: 'd',
             }
         ]
-        return answer[index.ans];
+        if (hisAnswer.Ans == answer[hisAnswer.index])
+         {
+            return true;
+         }
+         else{
+            return false;
+         }
     }
 }
