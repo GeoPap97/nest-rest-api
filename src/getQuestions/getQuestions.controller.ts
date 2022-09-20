@@ -7,6 +7,7 @@ export class GetQuestionsController{
 
     @Get('getQuestions')
     getQuestions(){
+        console.log()
         return this.getQuestionsService.getQuestions();
     }
     @Post('getHint')
